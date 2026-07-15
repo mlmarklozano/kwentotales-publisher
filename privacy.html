@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Kwento Tales Publisher</title>
+<style>
+  :root {
+    --bg: #FAFAF9;
+    --surface: #FFFFFF;
+    --text: #111110;
+    --text-secondary: #6B6A67;
+    --border: #E4E3DF;
+    --accent: #1D4ED8;
+    --rule: #D1D0CB;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0E0E0D;
+      --surface: #161615;
+      --text: #ECEAE6;
+      --text-secondary: #8A8880;
+      --border: #272624;
+      --accent: #60A5FA;
+      --rule: #2A2926;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 56px 32px 80px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: 0 0 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0 0 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h2 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: 40px 0 12px;
+  }
+
+  p {
+    margin: 0 0 16px;
+    max-width: 62ch;
+  }
+
+  ul {
+    margin: 0 0 16px;
+    padding-left: 20px;
+  }
+
+  li { margin-bottom: 6px; max-width: 60ch; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .highlight-box {
+    margin: 0 0 40px;
+    padding: 20px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    font-size: 14px;
+    max-width: 62ch;
+  }
+
+  .contact-block {
+    margin-top: 48px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .contact-block strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="eyebrow">Kwento Tales Publisher</p>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective date: July 15, 2025 &nbsp;·&nbsp; Last updated: July 15, 2025</p>
+
+  <div class="highlight-box">
+    <strong>Summary:</strong> This App does not collect, store, or share any personal data from TikTok users. It is a private internal tool used solely to publish videos to the operator's own TikTok account.
+  </div>
+
+  <h2>1. What This App Is</h2>
+  <p>Kwento Tales Publisher is a private, internal automation tool. It connects to TikTok's Content Posting API to upload pre-produced video content to a single TikTok account owned by the operator. It is not a public application and has no end users other than its operator.</p>
+
+  <h2>2. Data We Access</h2>
+  <p>Through TikTok's API, the App accesses only the following information belonging to the operator's own TikTok account:</p>
+  <ul>
+    <li>Account credentials (OAuth access and refresh tokens) used to authenticate API requests</li>
+    <li>Upload endpoints required to post video files</li>
+    <li>Basic account metadata needed to confirm successful publication</li>
+  </ul>
+
+  <h2>3. Data We Do Not Collect</h2>
+  <p>The App does not collect, process, or store any data from:</p>
+  <ul>
+    <li>TikTok users who view, like, comment on, or follow the operator's content</li>
+    <li>Any third-party individuals or accounts</li>
+    <li>Audience analytics, follower information, or engagement metrics</li>
+  </ul>
+
+  <h2>4. How Data Is Used</h2>
+  <p>OAuth tokens are stored locally on the operator's private server solely for the purpose of authenticating API calls. No data is transmitted to any third party other than TikTok's official API endpoints as required to perform uploads.</p>
+
+  <h2>5. Data Retention</h2>
+  <p>Access tokens are retained locally only as long as necessary for automated publishing operations. Tokens can be revoked at any time through TikTok's account security settings.</p>
+
+  <h2>6. Third-Party Services</h2>
+  <p>The App communicates exclusively with TikTok's official API (api.tiktok.com). No other third-party services receive data through this App.</p>
+
+  <h2>7. Security</h2>
+  <p>Credentials are stored in environment variables on a private server not accessible to the public. No credentials are stored in source code or transmitted over unencrypted connections.</p>
+
+  <h2>8. Your Rights</h2>
+  <p>Since no personal data from third parties is collected, there is no personal data to access, correct, or delete on your behalf. TikTok account access can be revoked at any time through TikTok's connected apps settings.</p>
+
+  <h2>9. Changes to This Policy</h2>
+  <p>This policy may be updated at any time. The effective date at the top of this page reflects the most recent revision.</p>
+
+  <h2>10. Contact</h2>
+  <div class="contact-block">
+    <strong>Operator Contact</strong>
+    For any questions regarding this privacy policy, contact:<br>
+    <a href="mailto:mygrayb@gmail.com">mygrayb@gmail.com</a>
+  </div>
+</div>
+</body>
+</html>
