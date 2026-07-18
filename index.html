@@ -1,0 +1,279 @@
+<title>Kwentotales Publisher</title>
+<style>
+  :root {
+    --bg: #0D0F14;
+    --surface: #171A22;
+    --border: #252836;
+    --text: #F0F2F8;
+    --muted: #8A8FA8;
+    --accent: #FF2D55;
+    --accent-soft: rgba(255, 45, 85, 0.12);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #F7F8FA;
+      --surface: #FFFFFF;
+      --border: #E2E4EC;
+      --text: #0D0F14;
+      --muted: #5A6070;
+      --accent-soft: rgba(255, 45, 85, 0.08);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0D0F14;
+    --surface: #171A22;
+    --border: #252836;
+    --text: #F0F2F8;
+    --muted: #8A8FA8;
+    --accent-soft: rgba(255, 45, 85, 0.12);
+  }
+  :root[data-theme="light"] {
+    --bg: #F7F8FA;
+    --surface: #FFFFFF;
+    --border: #E2E4EC;
+    --text: #0D0F14;
+    --muted: #5A6070;
+    --accent-soft: rgba(255, 45, 85, 0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 24px 80px;
+    flex: 1;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .logo-mark {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    border: 1.5px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-mark svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--accent);
+  }
+  .header-text {}
+  .app-name {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .app-tagline {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0;
+  }
+
+  /* Section */
+  .section { margin-bottom: 40px; }
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .section h2 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    text-wrap: balance;
+  }
+  .section p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 60ch;
+  }
+  .section p + p { margin-top: 10px; }
+
+  /* Permissions table */
+  .permissions {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 16px;
+  }
+  .permission-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .permission-row:last-child { border-bottom: none; }
+  .perm-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    font-family: ui-monospace, "SF Mono", "Cascadia Code", monospace;
+  }
+  .perm-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* Contact card */
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .contact-card .label {
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+  .contact-card a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .contact-card a:hover { text-decoration: underline; }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+    margin-top: 56px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    align-items: center;
+  }
+  footer span {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  footer a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  footer a:hover { color: var(--text); }
+  .dot { color: var(--border); }
+
+  @media (max-width: 480px) {
+    .page { padding: 40px 20px 60px; }
+    .permission-row { grid-template-columns: 1fr; gap: 4px; }
+    .section h2 { font-size: 19px; }
+  }
+</style>
+
+<div class="page">
+  <header class="header">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <div class="app-name">Kwentotales Publisher</div>
+      <div class="app-tagline">TikTok Content Publishing Tool</div>
+    </div>
+  </header>
+
+  <div class="section">
+    <div class="section-label">About</div>
+    <h2>Automated short-form video publishing for Kwentotales</h2>
+    <p>Kwentotales Publisher is a private automation tool that publishes short-form video content from the Kwentotales channel to TikTok. It is operated exclusively by the Kwentotales team and is not available to third-party users.</p>
+    <p>The tool manages the full pipeline — from video preparation to upload — for the <a href="https://www.tiktok.com/@kwentotales" style="color: var(--accent); text-decoration: none;" target="_blank" rel="noopener">@kwentotales</a> TikTok account, which produces Filipino and Southeast Asian mystery and true crime content.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">TikTok API Usage</div>
+    <h2>How this app uses TikTok permissions</h2>
+    <p>This tool requests only the permissions necessary to upload video content on behalf of the account owner.</p>
+    <div class="permissions">
+      <div class="permission-row">
+        <div class="perm-name">video.upload</div>
+        <div class="perm-desc">Upload video files to the creator's TikTok inbox for review and publishing. Videos are uploaded only to the @kwentotales account.</div>
+      </div>
+      <div class="permission-row">
+        <div class="perm-name">user.info.basic</div>
+        <div class="perm-desc">Read basic profile information to verify account identity during authorization. No personal data is stored.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Data & Privacy</div>
+    <h2>Data handling</h2>
+    <p>Kwentotales Publisher does not collect, store, or share personal data from TikTok users. OAuth tokens are stored securely on a private server and used solely to authenticate API requests for the @kwentotales account.</p>
+    <p>Video content published through this tool is original content created and owned by Kwentotales. No user data from TikTok is retained beyond the active session.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Contact</div>
+    <h2>Get in touch</h2>
+    <p>For questions about this application or its use of the TikTok API:</p>
+    <div class="contact-card">
+      <span class="label">Email</span>
+      <a href="mailto:mygrayb@gmail.com">mygrayb@gmail.com</a>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Kwentotales</span>
+    <span class="dot">·</span>
+    <a href="terms.html">Terms of Service</a>
+    <span class="dot">·</span>
+    <a href="privacy.html">Privacy Policy</a>
+  </footer>
+</div>
